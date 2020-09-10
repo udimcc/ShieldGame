@@ -8,7 +8,8 @@ public class PlayerControls : MonoBehaviour
     public float speed = 3.0f;
 
     CharacterController2D controller;
-    float movement;
+    float movement = 0;
+    bool isJumping = false;
 
     void Awake()
     {
@@ -17,11 +18,21 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-        this.movement= Input.GetAxisRaw("Horizontal") * this.speed;
+        this.movement = Input.GetAxisRaw("Horizontal") * this.speed;
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            this.isJumping = true;
+        }
     }
 
     private void FixedUpdate()
     {
-        this.controller.Move(this.movement * Time.fixedDeltaTime, false, false);
+        this.controller.Move(this.movement * Time.fixedDeltaTime, this.isJumping);
+
+        if (this.isJumping)
+        {
+            this.isJumping = false;
+        }
     }
 }

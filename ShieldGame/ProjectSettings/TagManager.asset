@@ -17,9 +17,9 @@ TagManager:
   - Background
   - Ground
   - Projectile
-  - 
-  - 
-  - 
+  - Shield
+  - PlayerBody
+  - Enemy
   - 
   - 
   - 

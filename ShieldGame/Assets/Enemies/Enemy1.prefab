@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7393670175699862106}
   - component: {fileID: 1305450213}
   - component: {fileID: 6020488208697584152}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,19 +187,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpForce: 400
-  _crouchSpeed: 0.36
   _movementSmoothing: 0.05
   _airControl: 1
+  _directionMode: 2
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   _groundCheck: {fileID: 7393670173837108271}
-  _ceilingCheck: {fileID: 7393670174150203817}
-  _crouchDisableCollider: {fileID: 7393670175699862101}
+  _flipObject: {fileID: 7279825213414479227}
   OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1305450213
@@ -215,11 +211,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   discoverPlayerDist: 10
-  fireRate: 1
-  bulletForce: 5
+  fireRate: 2.5
+  bulletForce: 8
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 8192
   firePos: {fileID: 4255484924507076734}
   projectile: {fileID: 795958484997168258, guid: 5d277008690cea44291ac9e9ce14fc01, type: 3}
 --- !u!114 &6020488208697584152
@@ -234,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d6d726aea1ba949bc6795e4b37a822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 60
   currentHealth: 0
 --- !u!1 &7393670173837108270
 GameObject:
@@ -245,7 +241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7393670173837108271}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7393670174150203817}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4255484924507076734}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: FirePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
