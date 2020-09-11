@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4838008251439055123}
   - component: {fileID: 4838008251439055124}
   - component: {fileID: 3035350685088284278}
-  m_Layer: 0
+  - component: {fileID: -4312999468060089015}
+  m_Layer: 12
   m_Name: ReflectShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4838008251439055125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.037, y: -3.54, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7c661e75b49ec1045a0c4720f6913f2d, type: 3}
-  m_Color: {r: 0.42597616, g: 0.8490566, b: 0.38047346, a: 1}
+  m_Color: {r: 0.8509804, g: 0.39450425, b: 0.38039216, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -92,7 +93,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 4838008251439055125}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 424d8589f52fada45a0bb9b14067056c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -116,3 +117,18 @@ PolygonCollider2D:
       - {x: 0.06767622, y: 0.10148943}
       - {x: 0.029013537, y: 0.20714866}
       - {x: -0.039255284, y: 0.26}
+--- !u!114 &-4312999468060089015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4838008251439055125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99b7ee3b81976944887c4cfc4f1e61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 16384
