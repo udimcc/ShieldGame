@@ -18,5 +18,6 @@ public class ReflectShield : MonoBehaviour, IShield
         }
 
         projectile.HitLayer = enemyLayer;
+        projectile.gameObject.layer = Layers.PlayerProjectile;
     }
 }

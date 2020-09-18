@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7393670175699862106}
   - component: {fileID: 1305450213}
   - component: {fileID: 6020488208697584152}
+  - component: {fileID: 2018156072}
   m_Layer: 14
   m_Name: Enemy1
   m_TagString: Untagged
@@ -187,13 +188,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpForce: 400
-  _movementSmoothing: 0.05
+  _jumpAmount: 2
+  _movementSmoothing: 0.3
   _airControl: 1
   _directionMode: 2
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
-  _groundCheck: {fileID: 7393670173837108271}
   _flipObject: {fileID: 7279825213414479227}
   OnLandEvent:
     m_PersistentCalls:
@@ -210,14 +211,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41574df4c6ec59c45b23666e886878ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  discoverPlayerDist: 10
+  speed: 300
+  discoverPlayerDist: 7
+  attackPlayerDist: 5
+  giveUpDist: 10
   fireRate: 2.5
-  bulletForce: 8
+  bulletSpeed: 5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8192
   firePos: {fileID: 4255484924507076734}
   projectile: {fileID: 795958484997168258, guid: 5d277008690cea44291ac9e9ce14fc01, type: 3}
+  _state: 0
 --- !u!114 &6020488208697584152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +237,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 60
   currentHealth: 0
+--- !u!114 &2018156072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7279825213414479227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436fabad244f2ab4ca4a46466ba94b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 300
+  patrolDelayMin: 3
+  patrolDelayMax: 4
+  reachDistance: 0.5
+  patrolArea: {fileID: 0}
 --- !u!1 &7393670173837108270
 GameObject:
   m_ObjectHideFlags: 0

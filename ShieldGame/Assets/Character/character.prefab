@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 392020825762717306}
   m_Layer: 13
   m_Name: Body
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 392020826398110492}
   m_Layer: 8
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   _jumpAmount: 2
   _movementSmoothing: 0.05
   _airControl: 1
-  _directionMode: 2
+  _directionMode: 1
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c3c0c70fa86e74ca493f6ef34e45ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 350
   shields:
   - {fileID: 5067871203347681366}
   - {fileID: 3374352354195423822}

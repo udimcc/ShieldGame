@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PatrolArea
   layers:
   - Default
   - TransparentFX
@@ -16,12 +17,12 @@ TagManager:
   - Player
   - Background
   - Ground
-  - Projectile
+  - 
   - Shield
   - PlayerBody
   - Enemy
-  - 
-  - 
+  - EnemyProjectile
+  - PlayerProjectile
   - 
   - 
   - 

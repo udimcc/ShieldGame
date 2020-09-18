@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController2D))]
 public class PlayerControls : MonoBehaviour
 {
-    public float speed = 3.0f;
+    public float speed = 350f;
     public GameObject[] shields;
 
     CharacterController2D controller;
@@ -58,7 +58,7 @@ public class PlayerControls : MonoBehaviour
 
     private void FixedUpdate()
     {
-        this.controller.Move(this.movement * Time.fixedDeltaTime, this.isJumping);
+        this.controller.Move(this.movement, this.isJumping);
 
         if (this.isJumping)
         {

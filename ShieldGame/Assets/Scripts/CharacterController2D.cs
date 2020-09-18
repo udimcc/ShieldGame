@@ -32,44 +32,12 @@ public class CharacterController2D : MonoBehaviour
     int _lastFlipDirection = 0;
     int _currentJumpAmount = 0;
 
-    private void Awake()
-    {
-        this._rb = this.GetComponent<Rigidbody2D>();
-    }
-
-    private void Update()
-    {
-        if (this._directionMode == DirectionMode.LookAtMouse)
-        {
-            this.PlayerLookAtMouse();
-        }
-    }
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (Utils.IsInLayerMask(this._whatIsGround, collision.gameObject.layer))
-        {
-            this._grounded = true;
-            this._currentJumpAmount = 0;
-            this.OnLandEvent.Invoke();
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (Utils.IsInLayerMask(this._whatIsGround, collision.gameObject.layer))
-        {
-            this._grounded = false;
-        }
-    }
-
 
     public void Move(float move, bool jump)
     {
         if ((this._grounded) || (this._airControl))
         {
-            Vector3 targetVelocity = new Vector2(move * 10f, this._rb.velocity.y);
+            Vector3 targetVelocity = new Vector2(move * Time.fixedDeltaTime, this._rb.velocity.y);
             this._rb.velocity = Vector3.SmoothDamp(this._rb.velocity, targetVelocity, ref this._velocity, this._movementSmoothing);
 
             if ((this._directionMode == DirectionMode.ByMovement) && (move != 0))
@@ -96,6 +64,46 @@ public class CharacterController2D : MonoBehaviour
 
                 this._currentJumpAmount += 1;
             }
+        }
+    }
+
+    public void MoveToTarget(Vector2 target, float speed)
+    {
+        float direction = target.x - this.transform.position.x;
+        direction = direction / Mathf.Abs(direction);
+
+        this.Move(direction * speed, false);
+    }
+
+
+    private void Awake()
+    {
+        this._rb = this.GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if (this._directionMode == DirectionMode.LookAtMouse)
+        {
+            this.PlayerLookAtMouse();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (Utils.IsInLayerMask(this._whatIsGround, collision.gameObject.layer))
+        {
+            this._grounded = true;
+            this._currentJumpAmount = 0;
+            this.OnLandEvent.Invoke();
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (Utils.IsInLayerMask(this._whatIsGround, collision.gameObject.layer))
+        {
+            this._grounded = false;
         }
     }
 
